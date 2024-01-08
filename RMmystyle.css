@@ -1,0 +1,9 @@
+.center{
+    text-align: center;
+
+}
+
+label.error{
+    color: red;
+    font-weight: bold;
+}

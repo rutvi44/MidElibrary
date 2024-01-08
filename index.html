@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RMelibrary</title>
+
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+    <script src="js/lib/jquery.validate.js"></script>
+
+    <script src="js/RMfacade.js"></script>
+    <script src="js/RMutil.js"></script>
+    <script src="js/RMglobal.js"></script>
+    <link rel="stylesheet" href="css/RMmystyle.css">
+
+</head>
+<body>
+<div data-role="page" id="RMHomePage">
+    <!-- Header section -->
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h2>RMeLibrary</h2>
+        <!-- Navigation bar -->
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#RMHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#RMSubscribe" data-icon="plus">Subscribe</a></li>
+                <li><a href="#RMSettings" data-icon="gear">Settings</a></li>
+                <li><a href="#RMContact" data-icon="star">Contact</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section data-role="content">
+        <h2 style="text-align: center">RMelibrary</h2>
+        <p style="text-align: center">Welcome To Rutvi's Marvel comic book subscription, where you can find all comic books of marvel.</p>
+
+        <!-- Image -->
+        <img src="img/RM-image.png" alt="" style="display: block; margin: 0 auto;">
+        <p style="text-align: center">Please feel free to contact me for more details!!</p>
+    </section>
+
+    <!-- Footer section -->
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h2>&copy; Rutvi Mistry</h2>
+    </footer>
+</div>
+
+<div data-role="page" id="RMSubscribe">
+    <!-- Header section -->
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h2>RMeLibrary</h2>
+        <!-- Navigation bar -->
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#RMHomePage" data-icon="home">Home</a></li>
+                <li><a href="#RMSubscribe" data-icon="plus" class="ui-btn-active ui-state-persist">Subscribe</a></li>
+                <li><a href="#RMSettings" data-icon="gear">Settings</a></li>
+                <li><a href="#RMContact" data-icon="star">Contact</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <section>
+        <form action= "" id="frmSubscribe" name="frmSubscribe" method="post">
+            <label for="txtSubscriptionName">Subscriber's Name : </label>
+            <input type="text" id="txtSubscriptionName" name="txtSubscriptionName" data-clear-btn="true">
+
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <label for="subscrpyionTypeMonthly">Monthly</label>
+                <input type="radio" id="subscrpyionTypeMonthly" name="radEventType" checked>
+
+                <label for="subscrpyionTypeAnnually">Annually</label>
+                <input type="radio" id="subscrpyionTypeAnnually" name="radEventType">
+            </fieldset>
+
+            <label>Choose e-books:</label>
+            <div data-role="collapsibleset">
+                <div data-role="collapsible" data-expanded-icon="minus">
+                    <h3>CS-IT</h3>
+                    <label for="CSIT1">Mastering Mobile App Developement</label>
+                    <input type="checkbox" id="CSIT1" name="CSIT1" data-iconpos="right">
+                    <label for="CSIT2">Machine Learning for Dummies</label>
+                    <input type="checkbox" id="CSIT2" name="CSIT2" data-iconpos="right">
+                    <label for="CSIT3">Handbook Learning for Dummies</label>
+                    <input type="checkbox" id="CSIT3" name="CSIT3" data-iconpos="right">
+                </div>
+                <div data-role="collapsible" data-expanded-icon="minus">
+                    <h3>Buisness Management</h3>
+                    <label for="BM1">Digital Strategies in a Global Market</label>
+                    <input type="checkbox" id="BM1" name="BM1" data-iconpos="right">
+                    <label for="BM2">Leadership Today</label>
+                    <input type="checkbox" id="BM2" name="BM2" data-iconpos="right">
+                    <label for="BM3">The Managers Path/label></label>
+                    <input type="checkbox" id="BM3" name="BM3" data-iconpos="right">
+                </div>
+                <div data-role="collapsible" data-expanded-icon="minus">
+                    <h3>Accounting</h3>
+                    <label for="Accounting1">Mastering QuickBooks</label>
+                    <input type="checkbox" id="Accounting1" name="Accounting1" data-iconpos="right">
+                    <label for="Accounting2">Intermediate Accounting</label>
+                    <input type="checkbox" id="Accounting2" name="Accounting2" data-iconpos="right">
+                    <label for="Accounting3">Accounting & Financial Management</label>
+                    <input type="checkbox" id="Accounting3" name="Accounting3" data-iconpos="right">
+                </div>
+            </div>
+
+            <label for="txtEmail">Subscriber Email : </label>
+            <input type="text" id="txtEmail" name="txtEmail" data-clear-btn="true">
+
+            <label for="subDate">Date of Subscription:</label>
+            <input type="date" id="subDate" name="subDate">
+
+            <label for="chkBoxRate">Do you want to rate this application?</label>
+            <input type="checkbox" id="chkBoxRate" name="chkBoxRate">
+
+            <div id="ratingfields">
+                <label for="intutiveUI">Intutive UI(0-5)</label>
+                <input type="number" id="intutiveUI" name="intutiveUI" value="0" data-clear-btn="true">
+                <label for="reponseTime">Response Time(0-5)</label>
+                <input type="number" id="reponseTime" name="reponseTime" value="0" data-clear-btn="true">
+                <label for="overallRating">Overall Rating(0-100):</label>
+                <input type="text" id="overallRating" name="overallRating" value="0" data-clear-btn="true">
+            </div>
+
+            <button type="button" id="submitBtn" name="submitBtn" data-role="Button" class="ui-btn-active">Submit</button>
+        </form>
+    </section>
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h2>&copy; Rutvi Mistry</h2>
+    </footer>
+</div>
+
+<div data-role="page" id="RMSettings">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h2>RMeLibrary</h2>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#RMHomePage" data-icon="home">Home</a></li>
+                <li><a href="#RMSubscribe" data-icon="plus">Subscribe</a></li>
+                <li><a href="#RMSettings" data-icon="gear"  class="ui-btn-active ui-state-persist">Settings</a></li>
+                <li><a href="#RMContact" data-icon="star">Contact</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <section>
+        <form id="frmSettings">
+            <label for="subEmail">Default Subscriber Email:</label>
+            <input type="email" id="subEmail" name="subEmail" data-clear-btn="true">
+
+            <button type="button" data-role="button" id="btnSave" name="btnSave" class="ui-btn-active ui-state-persist">Save</button>
+        </form>
+    </section>
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h2>&copy; Rutvi Mistry</h2>
+    </footer>
+</div>
+
+<div data-role="page" id="RMContact">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h2>RMeLibrary</h2>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#RMHomePage" data-icon="home">Home</a></li>
+                <li><a href="#RMSubscribe" data-icon="plus">Subscribe</a></li>
+                <li><a href="#RMSettings" data-icon="gear" >Settings</a></li>
+                <li><a href="#RMContact" data-icon="star" class="ui-btn-active ui-state-persist">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <h3>Contact Us</h3>
+        <div data-role="collapsible">
+            <h3>Call:123-456-789</h3>
+            <a data-role="button" data-rel="dialog" data-icon="plus">
+                <h4> Call:987-654-321</h4>
+            </a>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Email: rj@gmail.com </h3>
+            <a data-role="button" data-rel="dialog" data-icon="plus">
+                <h4> Email: jr@gmail.com</h4>
+            </a>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Website : www.conestogac.on.ca</h3>
+            <a data-role="button" data-rel="dialog" data-icon="plus" href="https://www.conestogac.on.ca">
+                <h4> Website : www.conestogac.on.ca </h4>
+            </a>
+        </div>
+
+    </section>
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h2>&copy; Rutvi Mistry</h2>
+    </footer>
+    </div>
+</body>
+</html>
